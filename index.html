@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSense AI — Clean AI Soil Analysis & Fertilizer Intelligence</title>
+  <meta name="description" content="Clean, farmer-friendly AI-powered soil analysis, crop recommendation and fertilizer intelligence platform in 6 Indian languages.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+
+  <!-- Google Fonts: Inter, Poppins, and Regional Indian Fonts (Kannada, Tamil, Devanagari, Telugu, Malayalam) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&family=Noto+Sans+Kannada:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Noto+Sans+Telugu:wght@400;600;700;800&family=Noto+Sans+Malayalam:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN with Strict Light-Green Theme Palette -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            appBg: '#F4FBF4',
+            appSecondaryBg: '#EAF7EA',
+            primaryGreen: '#4CAF50',
+            darkGreen: '#1B5E20',
+            lightGreen: '#C8E6C9',
+            veryLightGreen: '#F1F8F1',
+            cardBg: '#FFFFFF',
+            accentGreen: '#388E3C'
+          },
+          fontFamily: {
+            sans: ['"Inter"', '"Poppins"', '"Noto Sans Kannada"', '"Noto Sans Tamil"', '"Noto Sans Devanagari"', '"Noto Sans Telugu"', '"Noto Sans Malayalam"', 'system-ui', 'sans-serif'],
+            display: ['"Poppins"', '"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- React 18 & Babel Standalone -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./src/index.css">
+
+  <script>
+    // Fail-safe error reporter to prevent silent hanging on loading screen
+    function showStartupError(msg) {
+      console.error('Captured startup error:', msg);
+      var root = document.getElementById('root');
+      if (root && root.querySelector('.animate-pulse')) {
+        var errDiv = document.getElementById('loading-error-box');
+        if (!errDiv) {
+          errDiv = document.createElement('div');
+          errDiv.id = 'loading-error-box';
+          errDiv.className = 'mt-4 p-4 max-w-md mx-auto bg-amber-50 border border-amber-200 rounded-2xl text-center text-xs text-amber-900 shadow-md';
+          errDiv.innerHTML = '<div class="font-bold text-amber-800 mb-1">⚠️ Loading Notice</div>' +
+            '<p class="mb-3 text-gray-600 font-mono text-[11px]">' + (msg || 'Taking longer than expected') + '</p>' +
+            '<button onclick="window.location.reload(true)" class="px-5 py-2 bg-[#4CAF50] text-white font-bold rounded-xl text-xs hover:bg-[#388E3C] cursor-pointer shadow-xs">Reload Application</button>';
+          var container = root.querySelector('.text-center');
+          if (container) container.appendChild(errDiv);
+        }
+      }
+    }
+
+    window.addEventListener('error', function(e) {
+      showStartupError(e.message || 'Script execution error');
+    });
+
+    window.addEventListener('unhandledrejection', function(e) {
+      showStartupError((e.reason && e.reason.message) || 'Unhandled startup promise');
+    });
+
+    // Timeout failsafe: if scripts take > 6s, show helpful reload prompt instead of hanging
+    setTimeout(function() {
+      showStartupError('Loading CDN dependencies took longer than usual. Click below to reload.');
+    }, 6000);
+  </script>
+</head>
+<body class="bg-[#F4FBF4] text-[#1B5E20] antialiased selection:bg-[#C8E6C9] selection:text-[#1B5E20]">
+  <div id="root">
+    <!-- Clean Light Green Initial Skeleton -->
+    <div class="min-h-screen flex items-center justify-center bg-[#F4FBF4]">
+      <div class="text-center space-y-4">
+        <div class="w-16 h-16 rounded-3xl bg-[#4CAF50] text-white flex items-center justify-center text-3xl mx-auto shadow-md animate-pulse">
+          🌱
+        </div>
+        <div class="text-2xl font-black text-[#1B5E20] tracking-tight">
+          AgriSense<span class="text-[#4CAF50]"> AI</span>
+        </div>
+        <p class="text-sm text-[#388E3C] font-medium">
+          Loading AI Soil Intelligence...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Entry Script: Transpiled and executed automatically by Babel Standalone -->
+  <script type="text/babel" src="./src/app-bundle.jsx"></script>
+</body>
+</html>

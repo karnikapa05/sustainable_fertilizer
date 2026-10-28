@@ -1,0 +1,46 @@
+/* Clean Light Green Minimal Theme Animations */
+@keyframes softScan {
+  0% {
+    top: 0%;
+    opacity: 0.7;
+  }
+  50% {
+    top: 96%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.7;
+  }
+}
+
+.animate-soft-scan {
+  animation: softScan 2.4s ease-in-out infinite;
+}
+
+/* Print stylesheet for clean farmer reports */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #1b5e20 !important;
+  }
+  header, footer, nav, .print\:hidden {
+    display: none !important;
+  }
+  .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl {
+    box-shadow: none !important;
+  }
+  .border {
+    border-color: #c8e6c9 !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* High contrast touch targets for farmers */
+button, select, input {
+  touch-action: manipulation;
+}
